@@ -1,0 +1,196 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Controller-first devices (e.g. Razer Edge, handheld Snapdragon phones with clip-on controllers) are fully supported. -->
+    <uses-feature android:name="android.hardware.gamepad" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <!-- Memory Stick folder /storage/emulated/0/PXP (shared with file managers and USB/MTP) -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
+    <application android:label="PXP2" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher" android:theme="@android:style/Theme.Material.NoActionBar" android:allowBackup="false" android:largeHeap="true" android:networkSecurityConfig="@xml/network" android:usesCleartextTraffic="true">
+        <activity android:name=".RecoveryActivity" android:exported="true" android:launchMode="singleTop"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout">
+            <!-- Razer Kishi (USB): Android offers PXP2 when the controller attaches; "Always" keeps PXP2 as the handler
+                 instead of the Razer Nexus app. See res/xml/kishi_device_filter.xml. -->
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
+            </intent-filter>
+            <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" android:resource="@xml/kishi_device_filter"/>
+        </activity>
+
+        <activity android:name=".XmbActivity" android:exported="false" android:screenOrientation="sensorLandscape"
+            android:theme="@android:style/Theme.Material.NoActionBar.Fullscreen"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboard|keyboardHidden|navigation"/>
+        <!-- PSP Settings: edits the emulated PSP's saved system settings (XMB Settings column) while the XMB is closed. -->
+        <activity android:name=".XmbSettingsActivity" android:exported="false"/>
+
+        <!-- Dynamic launcher icon aliases for 12 PSP theme colors / months -->
+        <activity-alias
+            android:name=".LauncherAliasColor0"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_0"
+            android:roundIcon="@mipmap/ic_launcher_color_0"
+            android:label="PXP2"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor1"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_1"
+            android:roundIcon="@mipmap/ic_launcher_color_1"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor2"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_2"
+            android:roundIcon="@mipmap/ic_launcher_color_2"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor3"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_3"
+            android:roundIcon="@mipmap/ic_launcher_color_3"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor4"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_4"
+            android:roundIcon="@mipmap/ic_launcher_color_4"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor5"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_5"
+            android:roundIcon="@mipmap/ic_launcher_color_5"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor6"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_6"
+            android:roundIcon="@mipmap/ic_launcher_color_6"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor7"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_7"
+            android:roundIcon="@mipmap/ic_launcher_color_7"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor8"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_8"
+            android:roundIcon="@mipmap/ic_launcher_color_8"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor9"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_9"
+            android:roundIcon="@mipmap/ic_launcher_color_9"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor10"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_10"
+            android:roundIcon="@mipmap/ic_launcher_color_10"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAliasColor11"
+            android:targetActivity=".RecoveryActivity"
+            android:icon="@mipmap/ic_launcher_color_11"
+            android:roundIcon="@mipmap/ic_launcher_color_11"
+            android:label="PXP2"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+    </application>
+</manifest>

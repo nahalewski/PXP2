@@ -1,0 +1,26 @@
+.gradle/
+**/build/
+local.properties
+dist/
+local-test/
+
+# Third-party downloads and local data (never published)
+database/
+themes/
+web/artwork/
+hub_cache/
+pops_base/
+server_config.json
+# Generated / scratch
+__pycache__/
+*.pyc
+*.tmp
+NUL
+/pxp2_*.png
+# CFW build products (source only; binaries are built with cfw/build.sh)
+cfw/**/*.o
+cfw/**/*.elf
+cfw/**/*.prx
+cfw/**/EBOOT.PBP
+cfw/**/PARAM.SFO
+cfw/infinity/*.bin

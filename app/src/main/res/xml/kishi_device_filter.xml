@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- USB devices PXP2 offers to handle when attached (USB_DEVICE_ATTACHED, see AndroidManifest.xml).
+     Razer's USB vendor id is 0x1532 (5426). Product 0x0717 (1815) is the Kishi V2 Pro, as reported by the Razer Edge's
+     built-in controller ("Razer Razer Kishi V2 Pro"). The vendor-only entry covers the other Kishi models, whose
+     product ids were not available for testing. -->
+<resources>
+    <usb-device vendor-id="5426" product-id="1815"/>
+    <usb-device vendor-id="5426"/>
+</resources>

@@ -1,0 +1,31 @@
+# PXP2 CFW - systemctrl exports
+# Copyright (C) 2026 PXP2 project - GPL-3.0-or-later.
+# Defines the syslib exports plus the PXP2Ctrl plugin API.
+
+PSP_BEGIN_EXPORTS
+
+PSP_EXPORT_START(syslib, 0, 0x8000)
+PSP_EXPORT_FUNC(module_start)
+PSP_EXPORT_FUNC(module_stop)
+PSP_EXPORT_VAR(module_info)
+PSP_EXPORT_END
+
+PSP_EXPORT_START(PXP2Ctrl, 0, 0x4001)
+PSP_EXPORT_FUNC(pxp2ctrl_get_version)
+PSP_EXPORT_FUNC(pxp2ctrl_get_model)
+PSP_EXPORT_FUNC(pxp2ctrl_get_bootmode)
+PSP_EXPORT_FUNC(pxp2ctrl_register_module_handler)
+PSP_EXPORT_FUNC(pxp2ctrl_unregister_module_handler)
+PSP_EXPORT_FUNC(pxp2ctrl_find_module)
+PSP_EXPORT_FUNC(pxp2ctrl_find_export)
+PSP_EXPORT_FUNC(pxp2ctrl_hook_import)
+PSP_EXPORT_FUNC(pxp2ctrl_set_unsigned_allowed)
+PSP_EXPORT_FUNC(pxp2ctrl_get_unsigned_allowed)
+PSP_EXPORT_FUNC(pxp2ctrl_set_iso)
+PSP_EXPORT_FUNC(pxp2ctrl_get_iso)
+PSP_EXPORT_FUNC(pxp2ctrl_config_load)
+PSP_EXPORT_FUNC(pxp2ctrl_config_save)
+PSP_EXPORT_FUNC(pxp2ctrl_config_current)
+PSP_EXPORT_END
+
+PSP_END_EXPORTS

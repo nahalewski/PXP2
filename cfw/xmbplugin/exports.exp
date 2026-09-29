@@ -1,0 +1,18 @@
+# PXP2 CFW - vshctrl exports - GPL-3.0-or-later
+
+PSP_BEGIN_EXPORTS
+
+PSP_EXPORT_START(syslib, 0, 0x8000)
+PSP_EXPORT_FUNC(module_start)
+PSP_EXPORT_VAR(module_info)
+PSP_EXPORT_END
+
+PSP_EXPORT_START(PXP2Vsh, 0, 0x4001)
+PSP_EXPORT_FUNC(vshctrl_rescan)
+PSP_EXPORT_FUNC(vshctrl_iso_count)
+PSP_EXPORT_FUNC(vshctrl_iso_title)
+PSP_EXPORT_FUNC(vshctrl_iso_path)
+PSP_EXPORT_FUNC(vshctrl_launch_iso)
+PSP_EXPORT_END
+
+PSP_END_EXPORTS
